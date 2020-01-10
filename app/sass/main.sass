@@ -1,0 +1,508 @@
+@import normalize 
+@import vars 
+
+body
+	overflow-x: hidden
+	color: #000000
+	font-size: 14px
+	font-family: 'Fira Sans', sans-serif
+	line-height: 1.3
+div,input,header,footer
+	box-sizing: border-box
+
+.wow
+	visibility: hidden
+a 
+	text-decoration: none
+.container
+	padding: 0 10vw 
+	margin: 0 auto
+	max-width: 1140px
+	box-sizing: content-box
+.row
+	display: flex
+.row_reverse
+	display: flex
+	flex-direction: row-reverse
+.row_column
+	display: flex
+	flex-direction: column
+.btn
+	background-color: $main_blue
+	color: #ffffff
+	border-radius: 4px
+	border: none
+	padding: 10px 20px
+	margin: 12px 0
+	span
+		font-size: 1.4em
+		letter-spacing: .8px
+.text_line-through
+	text-decoration: line-through
+header
+	position: sticky
+	top: 0
+	margin: 40px 4vw 20px 4vw
+	padding-top: 40px
+	padding-bottom: 40px
+	background-color: #ffffff
+	z-index: 2
+	animation: fadeInRight .5s both cubic-bezier(.77,0,.175,1)
+.header__wrapper
+	justify-content: space-between
+	align-items: center
+.header_active
+	display: block
+.header__logo
+	display: none
+	font-size: 2em
+.btn--menu-open
+	display: none
+	position: fixed
+	right: 20px
+	top: 25px
+	border: none
+	background-color: transparent
+	z-index: 99
+.icon--menu
+	display: block
+	width: 30px
+	height: 3px
+	background-color: #000000
+	position: relative
+	&::after
+		content: ""
+		display: block
+		width: 30px
+		height: 3px
+		background-color: #000000
+		position: absolute
+		top: 8px
+	&::before
+		content: ""
+		display: block
+		width: 30px
+		height: 3px
+		background-color: #000000
+		position: absolute
+		top: 16px
+.btn--menu-close
+	display: none
+	top: 30px
+	right: 20px
+	z-index: 2
+	.icon--menu
+		transition: all .5s  cubic-bezier(.77,0,.175,1)
+		transform: rotate(45deg)
+		&::after
+			transition: all .5s cubic-bezier(.77,0,.175,1)
+			transform: rotate(90deg)
+			top: 0
+		&::before
+			display: none
+
+
+.nav__link
+	color: $main_blue
+	padding-right: 15px
+	font-size: 1.2em
+	animation: fadeInRight .5s both cubic-bezier(.77,0,.175,1)
+	&:first-child
+		animation-delay: .2s
+	&:nth-child(2)
+		animation-delay: .3s
+	&:nth-child(3)
+		animation-delay: .4s
+	&:nth-child(4)
+		animation-delay: .5s
+	&:last-child
+		animation-delay: .6s
+		padding-right: 0
+.link_active
+	color: #000000
+.contact
+	align-items: center
+
+.phone
+	font-size: 1.2em
+	color: #000000
+	padding-right: 10px
+.header__btn
+	margin: 0
+	padding: 5px 12px
+	a
+		font-size: 1em
+		letter-spacing: .8px
+		color: #ffffff
+		
+.text_line-through
+	text-decoration: line-through
+.intro
+	width: 65.345%
+	margin: 0 auto
+.intro__title
+	font-size: 5em
+	font-weight: 500
+.intro__secondary-text
+	font-size: 1.35em
+.intro__text
+	font-size: 2.2em
+	line-height: 1.5
+	margin-top: 50px
+.intro__text_line-through
+	text-decoration-color: $main_blue
+.intro__text_word-highlight
+	position: relative
+	border: 2px solid $main_blue
+	padding: 2px 6px
+	&::after
+		content: ""
+		display: block 
+		position: absolute
+		bottom: -4px
+		right: -4px
+		width: 4px
+		height: 4px
+		background-color: $main_blue
+		border: 2px solid #ffffff
+
+.work-examples__item	
+	margin: 60px 0
+.work-examples__item_reverse
+	align-items: flex-end
+.work-examples__item-content
+	width: 100%
+.work-examples__item-text
+	justify-content: space-between
+	align-items: flex-end
+	flex-basis: 60%
+	position: relative
+	width: 60%
+	padding: 10px	
+	&::after
+		content: ""
+		display: block 
+		position: absolute
+		bottom: -4px
+		right: -4px
+		width: 8px
+		height: 8px
+		border: 2px solid #ffffff
+.work-examples__item-text_red
+	border: 2px solid $main_red
+	&::after
+		background-color: $main_red
+.work-examples__item-text_green
+	border: 2px solid $main_green
+	&::after
+		background-color: $main_green
+.work-examples__item-text_blue
+	border: 2px solid $main_blue
+	&::after
+		background-color: $main_blue
+.work-examples__item-text_yellow
+	border: 2px solid $main_yellow
+	&::after
+		background-color: $main_yellow
+.work-examples__item-description
+	width: 50%
+	margin-top: 5px
+	padding: 5px 10px
+	color: #ffffff
+.work-examples__item-description_red
+	background-color: $main_red
+.work-examples__item-description_blue
+	background-color: $main_blue
+.work-examples__item-description_green
+	background-color: $main_green
+.work-examples__item-description_yellow
+	background-color: $main_yellow
+.work-examples__cost
+	font-size: 3.5em
+	line-height: .9
+.work-examples__item-border
+	flex-basis: 30%
+	border: 1px solid rgba(0,0,0,0.1)
+	border-left: 0
+.work-examples__item-border_reverse
+	border-left: 1px solid rgba(0,0,0,0.1)
+	border-right: 0
+.work-examples__cost_red
+	color: $main_red
+.work-examples__cost_green
+	color: $main_green
+.work-examples__cost_blue
+	color: $main_blue
+.work-examples__cost_yellow
+	color: $main_yellow
+.work-examples__sub-cost
+	color: rgba(0,0,0,.4)
+.hero__text
+	margin: 0 auto
+	width: 65.345%
+	align-items: flex-start
+	justify-content: center
+	font-size: 2.2em
+	line-height: 1.5
+.hero__work-place
+	display: inline
+	a
+		text-decoration: underline
+		color: $main_blue
+
+.hero__img
+	margin: 40px 0 15px 0
+	text-align: center
+	animation: fadeIn .5s both
+	img
+		width: 12vw
+		height: 12vw
+		min-width: 100px
+		min-height: 100px
+		max-width: 180px
+		max-height: 180px
+		border-radius: 50%
+.hero-about
+	margin-top: 60px
+	margin: 80px auto 80px auto
+	font-size: 1.2em
+	.row
+		justify-content: space-between
+		align-items: flex-start
+		flex-wrap: wrap
+.hero-about__col
+	min-width: 125px
+	margin: 10px 4px
+	&:nth-child(1)
+		flex-basis: 38%
+		margin-left: 0
+	&:nth-child(2)
+		flex-basis: 28%
+	&:nth-child(3)
+		flex-basis: 28%
+		margin-right: 0
+.hero-about__title
+	padding-bottom: 10px
+	border-bottom: 1px solid rgba(0,0,0,0.1)
+	text-transform: uppercase
+.hero-about__text
+	padding-top: 10px
+.afk-system__text
+	color: #4a85aa
+	letter-spacing: 1.5px
+.afk-system
+	margin-bottom: 30px
+.euroset__text
+	color: $main_yellow
+	letter-spacing: 1.5px
+.hero-about__paragraph
+	margin-bottom: 15px
+.principles
+	.row 
+		justify-content: space-between
+
+.principles__title
+	width: 50vw
+	margin: 20px auto
+	font-size: 2.5em
+	font-weight: 300
+.principles__card
+	width: 49%
+
+	height: 240px
+	border-radius: 5px
+	margin: 1% 0
+	color: #ffffff
+	padding: 20px
+.principles__card-title
+	font-size: 3em
+.principles__card-text
+	padding-top: 10px
+	font-size: 1.2em
+.principles__card_green
+	background-color: $main_green
+.principles__card_yellow
+	background-color: $main_yellow
+.principles__card_red
+	background-color: $main_red
+.principles__card_blue
+	background-color: $main_blue
+.support
+	margin-bottom: 80px
+.support__title
+	width: 60%
+	margin: 85px auto 50px auto
+	font-size: 2em
+
+.support__word_bg-gray
+	background-color: $coffee
+.support__content-title
+	font-size: 5.5em
+.support__content
+	background-color: $coffee
+	padding: 20px 15px
+.support__text_highlighted
+	color: $light_green
+	font-weight: 500
+.support__block-title
+	font-size: 1.8em
+.support__block-title_offset
+	margin-top: 30px
+.support__block-text
+	padding-top: 10px
+.support__text_end 
+	text-align: end
+.support__block
+	justify-content: space-between
+	padding: 15px 0 45px 0
+	border-bottom: 1px solid rgba(0,0,0,0.1)
+	&:last-child
+		border-bottom: none
+.col-1
+	width: 12%
+.col-3
+	width: 32%
+.col-4
+	width: 42%
+
+.wrapper-reviews-clients
+	justify-content: space-between
+.reviews
+	flex-basis: 65%
+.reviews__title
+	font-size: 2em
+	margin-bottom: 10px
+.clients
+	flex-basis: 25%
+
+.review
+	margin-bottom: 40px 
+.review__title
+	font-size: 1.8em
+	padding-bottom: 20px
+	span
+		font-style: italic
+		color: $main_blue
+.review__text
+	padding-left: 40px
+	font-size: 1.2em
+	p
+		padding-bottom: 20px
+	
+.review__text_highlighted
+	background-color: $light_yellow
+.client
+	margin: 20px 0
+	img
+		width: 100%
+.form
+	justify-content: space-between
+	padding: 25px 25px 75px 25px
+	margin-bottom: 40px
+	border-radius: 8px
+	border: 2px solid $light_green
+	transition: all .3s ease-in-out
+.form_invalid
+	border: 2px solid $main_red
+.form__title
+	font-size: 1.8em
+.form__field 
+	margin: 15px 0
+	width: 100%
+	font-size: 1.4em
+	input
+		width: 100%
+		padding: 10px
+		background-color: transparent
+		border: 1px solid rgba(0,0,0,.1)
+		border-radius: 4px
+		transition: all .3s ease-in-out
+.field_invalid
+	input
+		border: 1px solid $main_red
+.form__btn
+	transition: all .3s ease-in-out
+.btn_valid
+	background-color: $main_green
+.form__col-3
+	flex-basis: 60%
+.form__col-1
+	flex-basis: 20%
+.form__text
+	padding-right: 20px
+	font-size: 1.2em
+	p
+		padding-bottom: 20px
+.cotanct__info
+	font-size: 1.4em
+	width: 50%
+	letter-spacing: .5px
+	margin-bottom: 60px
+	a
+		color: $main_blue
+.copyright
+	margin-bottom: 20px
+.footer
+	background-color: $cream_white
+.footer__title
+	font-size: 1.8em
+	width: 50%
+	padding-top: 20px
+.footer__card
+	justify-content: space-between
+	align-items: flex-start
+	width: 50%
+	height: 280px
+	padding: 20px
+	margin: 60px auto
+	background-color: $light_green
+	border-radius: 10px
+	color: #ffffff
+	position: relative
+	overflow: hidden
+	box-shadow: 1px 60px 20px -30px rgba(9,226,167,.5)
+	&::after
+		content: ""
+		display: block
+		width: 
+		height: 15px
+		width: 200px
+		background-color: $main_red
+		position: absolute
+		right: -80px
+		top: 50px
+		transform: rotate(45deg)
+.footer__card-title
+	font-size: 1.8em
+	max-width: 60%
+	margin-bottom: 10px
+.footer__card-text
+	max-width: 60%
+.footer__card-btn
+	a
+		font-size: 1.4em
+		letter-spacing: .8px
+		color: #ffffff
+.subscribe
+	width: 100%
+.subscribe__text
+	padding: 0 0 5px 20px
+	font-size: 1.2em
+.subscribe__input
+	width: 100%
+	padding: 12px 18px
+	font-size: 1.8em
+	border: none
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+@keyframes fadeInRight
+	0%
+		transform: translate3d(100%,0,0)
+	100%
+		transform: translate3d(0,0,0)	
+
+@import media
